@@ -84,8 +84,4 @@ def common_elements_in_lists(n: int) -> List[int]:
     
     return common_elements
 
-# Example usage
-N = 100
-common_numbers = common_elements_in_lists(N)
-print(f"Numbers appearing in both lists of Prime Numbers and Recaman's sequence when they are both {N} items long: {common_numbers}")
 

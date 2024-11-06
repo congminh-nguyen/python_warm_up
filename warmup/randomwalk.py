@@ -21,8 +21,13 @@ def random_walk() -> Generator[int, None, None]:
         position += step
         yield position
 
-def plot_random_walk(steps: List[int]) -> None:
-    """Plot the random walk given a list of steps."""
+def plot_random_walk() -> None:
+    """Plot a random walk."""
+    # Collect the steps in a list for plotting
+    steps = [0]  # Start at position 0
+    for step in random_walk():
+        steps.append(step)
+        
     plt.figure(figsize=(10, 6))
     plt.plot(steps, marker='o')
     plt.title('Random Walk with Total Displacement of 10')
@@ -30,11 +35,3 @@ def plot_random_walk(steps: List[int]) -> None:
     plt.ylabel('Position')
     plt.grid(True)
     plt.show()
-
-# Collect the steps in a list for plotting
-steps: List[int] = [0]  # Start at position 0
-for step in random_walk():
-    steps.append(step)
-
-# Plot the random walk
-plot_random_walk(steps)
